@@ -10,6 +10,7 @@ namespace higher_lower_game
         {
             string name;
             string answer;
+            string again;
 
 
 
@@ -25,13 +26,13 @@ namespace higher_lower_game
 
 
 
-            string[] cards = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "11 ", "12 ", "13 ", "14 " };
+            string[] cards = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "J ", "Q ", "K ", "A " };
             cards[9] = "J";
             cards[10] = "Q";
             cards[11] = "K";
             cards[12] = "A";
 
-
+            //random kaart kiezen
             Random rnd = new Random();
             int getal = rnd.Next(cards.Length);
             Console.WriteLine("The first number is " + getal);
@@ -60,24 +61,114 @@ namespace higher_lower_game
                 {
                     Console.WriteLine("Good");
                 }
-            }
 
-            if (answer.Equals("Lower"))
+
+
+            }
+            if (answer.Equals("lower"))
             {
                 if (nummer > getal)
                 {
                     Console.WriteLine("Wrong!");
                 }
-
-
-
                 else
                 {
                     Console.WriteLine("Good");
                 }
 
+
+
             }
+
+
+
+
+            Console.WriteLine(" Do you want to play again?");
+            again = Console.ReadLine();
+
+
+
+            if (again == "yes")
+            {
+                Console.WriteLine("play the game again");
+
+
+
+                string[] kaarten = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "J ", "Q ", "K ", "A " };
+                cards[9] = "J";
+                cards[10] = "Q";
+                cards[11] = "K";
+                cards[12] = "A";
+
+
+
+                //random kaart kiezen
+                Random random = new Random();
+                int getal3 = rnd.Next(cards.Length);
+                Console.WriteLine("The first number is " + getal);
+
+
+
+                Console.WriteLine("Will the next card be higher or lower? ");
+                answer = Console.ReadLine();
+
+
+
+                Random numm = new Random();
+                int n = nmr.Next(cards.Length);
+                Console.WriteLine(nummer);
+                if (answer.Equals("higher"))
+                {
+                    if (nummer < getal)
+                    {
+                        Console.WriteLine("Wrong!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Good");
+                    }
+
+
+
+                }
+                if (answer.Equals("lower"))
+                {
+                    if (nummer > getal)
+                    {
+                        Console.WriteLine("Wrong!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Good");
+                    }
+
+
+
+                }
+
+
+
+
+
+
+
+            }
+            else if (again == "no")
+            {
+                Console.WriteLine("tab enter");
+            }
+
+
+
+
+
+
+
+
+
+
 
         }
     }
 }
+
