@@ -7,5 +7,6 @@ namespace ProjectHigherLower
     // Vervang de class Card met de Card van card-assignment opdracht zodra die af is.
     class Card
     {
+
     }
 }
