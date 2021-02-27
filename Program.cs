@@ -93,31 +93,38 @@ namespace higher_lower_game
 
 
             //geef aan of nummer goed of fout is
-            if (answer.Equals("higher"))
+            if (answer == "higher")
             {
                 if (nummer < getal)
                 {
                     Console.WriteLine("Wrong!");
+                    Console.WriteLine($"You now have {cash}");
                 }
                 else
                 {
-                    Console.WriteLine("Good");
                     bet = bet * 2;
                     cash = cash + bet;
+                    Console.WriteLine("Good");
                     Console.WriteLine($"You now have {cash}");
+
                 }
 
 
             }
-            if (answer.Equals("lower"))
+            if (answer == "lower")
             {
                 if (nummer > getal)
                 {
                     Console.WriteLine("Wrong!");
+                    Console.WriteLine($"You now have {cash}");
                 }
                 else
                 {
+                    bet = bet * 2;
+                    cash = cash + bet;
+                    
                     Console.WriteLine("Good");
+                    Console.WriteLine($"You now have {cash}");
                 }
 
 
