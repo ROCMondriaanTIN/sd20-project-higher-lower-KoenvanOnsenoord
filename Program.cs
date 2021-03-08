@@ -14,7 +14,7 @@ namespace higher_lower_game
             double cash = 0;
             bool loop = true;
             double bet = 0;
-           
+
 
 
             // Hier word de naam gebruiker en spel regels uitgeprint
@@ -24,8 +24,8 @@ namespace higher_lower_game
             Console.WriteLine("Please enter your name: ");
             name = Console.ReadLine();
             Console.WriteLine("Hi there, " + name);
-            Console.WriteLine($"How much money do you want {name}?");
-           
+            Console.WriteLine($"How much money do you want use {name}?");
+
 
             do
             {
@@ -54,8 +54,8 @@ namespace higher_lower_game
             cards[12] = "A";
 
             //random kaart kiezen
-            Random rnd = new Random();
-            int getal = rnd.Next(cards.Length);
+            Random rnd1 = new Random();
+            int getal = rnd1.Next(cards.Length);
             Console.WriteLine("The first number is " + getal);
 
 
@@ -122,7 +122,7 @@ namespace higher_lower_game
                 {
                     bet = bet * 2;
                     cash = cash + bet;
-                    
+
                     Console.WriteLine("Good");
                     Console.WriteLine($"You now have {cash}");
                 }
@@ -131,8 +131,100 @@ namespace higher_lower_game
 
             }
 
-            // hier owrd er gevraagd of je nog een keer wilt spelen
+            // hier word er gevraagd of je nog een keer wilt spelen
 
+
+            Console.WriteLine(" Do you want to play again?");
+            again = Console.ReadLine();
+
+
+
+            if (again == "yes")
+            {
+                Console.WriteLine("play the game again");
+                Console.WriteLine("How much money do you want to bet?");
+                loop = true;
+                do
+                {
+                    try
+                    {
+                        bet = Convert.ToDouble(Console.ReadLine());
+                        loop = false;
+                        cash = cash - bet;
+                    }
+                    catch (FormatException)
+                    {
+                        Console.WriteLine("Fill in a number");
+                    }
+
+
+                } while (loop == true);
+
+
+                string[] kaarten = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "J ", "Q ", "K ", "A " };
+                cards[9] = "J";
+                cards[10] = "Q";
+                cards[11] = "K";
+                cards[12] = "A";
+
+
+
+                //random kaart kiezen
+                Random random2 = new Random();
+                int getal2 = rnd1.Next(kaarten.Length);
+                Console.WriteLine("The  number is " + getal2);
+
+
+
+                Console.WriteLine("Will the next card be higher or lower? ");
+                answer = Console.ReadLine();
+
+
+
+                Random numm = new Random();
+                int n = nmr.Next(cards.Length);
+                Console.WriteLine(nummer);
+                if (answer.Equals("higher"))
+                {
+                    if (nummer < getal)
+                    {
+                        Console.WriteLine("Wrong!");
+                        Console.WriteLine($"You now have {cash}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Good");
+                        Console.WriteLine($"You now have {cash}");
+                    }
+
+
+
+                }
+                if (answer.Equals("lower"))
+                {
+                    if (nummer > getal)
+                    {
+                        Console.WriteLine("Wrong!");
+                        Console.WriteLine($"You now have {cash}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Good");
+                        Console.WriteLine($"You now have {cash}");
+                    }
+
+
+
+                }
+
+
+
+            }
+            else if (again == "no")
+            {
+                Console.WriteLine("tab enter");
+            }
+            // vraag opnieuw
 
             Console.WriteLine(" Do you want to play again?");
             again = Console.ReadLine();
@@ -155,8 +247,8 @@ namespace higher_lower_game
 
                 //random kaart kiezen
                 Random random = new Random();
-                int getal3 = rnd.Next(cards.Length);
-                Console.WriteLine("The first number is " + getal);
+                int getal3 = rnd1.Next(cards.Length);
+                Console.WriteLine("The first number is " + getal3);
 
 
 
@@ -204,8 +296,6 @@ namespace higher_lower_game
             {
                 Console.WriteLine("tab enter");
             }
-
-
 
         }
     }
